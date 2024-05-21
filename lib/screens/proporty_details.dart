@@ -159,7 +159,7 @@ class _ProportiesState extends State<Proporties> {
               ),
               const SizedBox(height: 10),
               SizedBox(
-                height: 1280,
+                height: 1380,
                 child: TabBarView(
                   children: [
                     Padding(
@@ -499,7 +499,11 @@ class _ProportiesState extends State<Proporties> {
                                   IconButton(
                                     onPressed: () {
                                       thumUp = !thumUp;
-                                      thumUp ? upCount++ : upCount--;
+                                      thumDown = false;
+                                      if (thumUp) {
+                                        upCount++;
+                                        downCount--;
+                                      }
 
                                       setState(() {});
                                     },
@@ -512,7 +516,11 @@ class _ProportiesState extends State<Proporties> {
                                   IconButton(
                                     onPressed: () {
                                       thumDown = !thumDown;
-                                      thumDown ? downCount++ : downCount--;
+                                      thumUp = false;
+                                      if (thumDown) {
+                                        upCount--;
+                                        downCount++;
+                                      }
 
                                       setState(() {});
                                     },
@@ -587,7 +595,11 @@ class _ProportiesState extends State<Proporties> {
                                   IconButton(
                                     onPressed: () {
                                       thumUp2 = !thumUp2;
-                                      thumUp2 ? upCount2++ : upCount2--;
+                                      thumDown2 = false;
+                                      if (thumUp2) {
+                                        upCount2++;
+                                        downCount2--;
+                                      }
 
                                       setState(() {});
                                     },
@@ -600,6 +612,7 @@ class _ProportiesState extends State<Proporties> {
                                   IconButton(
                                     onPressed: () {
                                       thumDown2 = !thumDown2;
+                                      thumUp2 = !thumUp2;
                                       thumDown2 ? downCount2++ : downCount2--;
 
                                       setState(() {});
